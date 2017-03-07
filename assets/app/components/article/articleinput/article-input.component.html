@@ -1,0 +1,14 @@
+<div class="col-md-8 col-md-offset-2" >
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <textarea rows="2" name="title" class="form-control" ngModel required></textarea><br/>
+            <label for="content">Content</label>
+            <!--<input type="text" id="content" class="form-control" #content><br/>-->
+            <textarea rows="15"  name="content" class="form-control" ngModel required></textarea><br/>
+            <input type="file" name="file"><br/>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+    </form>
+    <button class="btn btn-primary" (click)="redirectTo()">Cancel</button>
+</div>

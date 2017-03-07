@@ -1,0 +1,37 @@
+<div class="language">  
+<h1>اخبار شبکه های هوشمند</h1>
+<div class="add-new-article" *ngIf="isLoggedIn()">
+    <strong><a [routerLink]="['/article-input']">Add News</a></strong>
+</div>
+    <!--<ul>
+        <li *ngFor="let article of articles">
+            <a  [routerLink]="['/home', article._id]"><strong>{{article.title}}</strong></a>
+             <br>
+        </li>
+    </ul>-->
+
+    <div class="col-md-8 col-md-offset-2"> 
+        <!--<input type="text" placeholder="Add new title..." [(ngModel)]="article.title">-->
+        <article 
+                *ngFor="let article of articles"
+                class="panel panel-default" > 
+                <!--[ngStyle]="{ backgroundColor: color}" 
+                (mouseenter)=" color='#e5e7ea' " 
+                (mouseleave)=" color='#FFFFFF' "-->
+            <div class="panel-body">
+                <div class="article-title">
+                    <strong><a [routerLink]="['/article', article.articleId]">{{article.title}}</a></strong>
+                </div>
+            </div>    
+                <footer class="panel-footer">
+                    <div class="author">
+                        Author: {{article.username}}
+                    </div>
+                    <!--<div class="config">
+                        <a>Edit</a>
+                        
+                    </div>-->
+                </footer>
+        </article>
+    </div>
+    </div>
